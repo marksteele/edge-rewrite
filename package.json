@@ -1,0 +1,26 @@
+{
+  "name": "sketchbook-edge-redirects",
+  "version": "1.0.0",
+  "description": "Redirect behaviours that live on labmda@edge for sketchbook.com default cache behaviour",
+  "repository": "",
+  "author": "Mark Steele <mark.steele@autodesk.com>",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.12.0",
+    "aws-sdk-mock": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.0.2",
+    "jsdoc": "^3.4.3",
+    "jsdoc-to-markdown": "^3.0.0",
+    "mocha": "^3.2.0",
+    "serverless-offline": "^3.13.3",
+    "serverless-plugin-optimize": "^1.0.0-rc.15",
+    "sinon": "^2.1.0"
+  },
+  "scripts": {
+    "test": "IS_TEST=1 mocha",
+    "jsdoc": "./node_modules/.bin/jsdoc2md --files api/*.js >doc/README.md"
+  }
+}
