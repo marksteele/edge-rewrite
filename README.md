@@ -25,11 +25,17 @@ Flags can be used to change the behaviour of the rewrite rules.
 The following flags are available:
 
 `L`: This indicates that if this rule matches, no further rules should be applied.
+
 `NC`: When evaluating the regular expression, ignore case.
+
 `R`: The redirect flag. Defaults to a 301 redirect, although a different code can be specified by adding the code to the flag with an equal sign (eg: R=302).
+
 `F`: The forbidden flag. Will return a 403 error message.
+
 `G`: The gone flag, will return a 410 error message.
+
 `H=<host regex>`: This rule will match a regular expression against the host HTTP header.
+
 
 Unless short-circuited with the last flag, all rules are tested, with the last rule that matches determining the final outcome.
 
