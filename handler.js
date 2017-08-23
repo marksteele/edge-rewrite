@@ -1,9 +1,6 @@
 'use strict';
 var rules = require('./api/rules.js');
 
-
-// Based on https://github.com/tinganho/connect-modrewrite/blob/master/index.js
-
 let rewriteRules;
 
 const applyRules = function(e) {

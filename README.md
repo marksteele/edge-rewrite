@@ -55,12 +55,21 @@ Rules are packaged into a JSON file that should be placed at the root of this pr
 
 These will be bundled inside the lambda during the deployment process.
 
+# Installation
+
+```
+npm install serverless -g
+npm install
+```
 
 # Deployment
 
 ```
-sls deploy -s prod --region us-east-1
+sls deploy -s prod --region us-east-1 --aws-profile prod
 ```
+
+This assumes you have AWS credentials setup in your profile. Prior to deploying, edit the serverless.yml to suit your needs (eg: update the profile name).
+
 Once the function is deployed, it can be associated to a CloudFront behaviour by specifying the versioned ARN to the behavior.
 
 This function is designed to run on the `viewer request` phase of Lambda@Edge.
