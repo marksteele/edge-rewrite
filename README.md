@@ -34,8 +34,9 @@ The following flags are available:
 
 `G`: The gone flag, will return a 410 error message.
 
-`H=<host regex>`: This rule will match a regular expression against the host HTTP header.
+`H=<host regex>`: This flag will match a regular expression against the host HTTP header.
 
+`Q=<host replacement>`: This flag if set will replace the existing host header with a replacement.
 
 Unless short-circuited with the last flag, all rules are tested, with the last rule that matches determining the final outcome.
 

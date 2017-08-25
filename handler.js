@@ -19,6 +19,10 @@ const applyRules = function(e) {
       }
     }
 
+    if (rule.hostRW) {
+      acc.res.headers.host[0].value = rule.hostRW;
+    }
+
     var match = rule.regexp.test(req.uri);
     // If not match
     if (!match) {

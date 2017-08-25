@@ -164,3 +164,17 @@ describe('Apply non-matching rule', () => {
       });
     });
   }); 
+
+  describe('Test rewrite host rewrite', () => {
+    it('should return a the an object the new host of the first rule with the match', () => {
+      var fixture = {"Records":[{"cf":{"request":{"headers":{"host":[{"key":"Host","value":"foo.bar.baz"}]},"method":"GET","uri":"/redirecT/3243"}}}]};
+      var stub = sinon.stub(rules,'loadRules').returns(['^/redirect/(\\d*)$ /baz?$1 [Q=fuz.baz.bar,NC]','^/redirect/\\d*$ /bar']);
+      handler.handler(fixture,{},(err,res) => {
+          sinon.assert.match(err,null);        
+          sinon.assert.match(stub.callCount,1);
+          sinon.assert.match(res.uri,'/baz?3243');
+          sinon.assert.match(res.headers.host[0].value,"fuz.baz.bar");
+          stub.restore();
+      });
+    });
+  }); 

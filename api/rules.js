@@ -6,6 +6,7 @@ var redirectSyntax = /R=?(\d+)?/;
 var forbiddenSyntax = /F/;
 var goneSyntax = /G/;
 var hostSyntax =  /H=([^,]+)/;
+var hostRWSyntax = /Q=([^,]+)/;
 var flagSyntax = /\[([^\]]+)]$/;
 var partsSyntax = /\s+|\t+/g;
 var querySyntax = /\?(.*)/;
@@ -25,7 +26,8 @@ const parseRules = function(unparsedRules) {
       forbiddenSyntax.lastIndex = 0;
       goneSyntax.lastIndex = 0;
       hostSyntax.lastIndex = 0;
-  
+      hostRWSyntax.lastIndex = 0;
+
       var parts = rule.replace(partsSyntax, ' ').split(' '), flags = '';
   
       if (flagSyntax.test(rule)) {
@@ -40,7 +42,8 @@ const parseRules = function(unparsedRules) {
   
       var redirectValue = redirectSyntax.exec(flags);
       var hostValue = hostSyntax.exec(flags);
-  
+      var hostRWValue = hostRWSyntax.exec(flags);
+
       return {
         regexp: typeof parts[2] !== 'undefined' && noCaseSyntax.test(flags) ? new RegExp(parts[0], 'i') : new RegExp(parts[0]),
         replace: parts[1],
@@ -49,7 +52,8 @@ const parseRules = function(unparsedRules) {
         redirect: redirectValue ? (typeof redirectValue[1] !== 'undefined' ? redirectValue[1] : 301) : false,
         forbidden: forbiddenSyntax.test(flags),
         gone: goneSyntax.test(flags),
-        host: hostValue ? new RegExp(hostValue[1]) : false
+        host: hostValue ? new RegExp(hostValue[1]) : false,
+        hostRW: hostRWValue ? hostRWValue[1] : false
       };
     });
   };
