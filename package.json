@@ -1,7 +1,7 @@
 {
-  "name": "sketchbook-edge-redirects",
+  "name": "edge-rewrite",
   "version": "1.0.0",
-  "description": "Redirect behaviours that live on labmda@edge for sketchbook.com default cache behaviour",
+  "description": "Redirect behaviours that live on labmda@edge",
   "repository": "",
   "author": "Mark Steele <mark@control-alt-del.org>",
   "license": "MIT",
