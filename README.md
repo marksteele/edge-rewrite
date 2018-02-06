@@ -71,7 +71,7 @@ This assumes you have AWS credentials setup in your profile. Prior to deploying,
 
 Once the function is deployed, it can be associated to a CloudFront behaviour by specifying the versioned ARN to the behavior.
 
-This function is designed to run on the `viewer request` phase of Lambda@Edge.
+This function has been tested to run on the `viewer request` phase of Lambda@Edge. It should also work on origin requests (which would have the benefit of caching responses).
 
 
 # Acknoledgements
