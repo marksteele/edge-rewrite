@@ -3,8 +3,8 @@ provider:
   name: aws
   runtime: nodejs6.10
   stage: ${opt:stage, self:custom.defaultStage}
-  profile: ${self:custom.profiles.${self:provider.stage}}   
-  
+  profile: ${self:custom.profiles.${self:provider.stage}}
+
 custom:
   defaultStage: dev
   profiles:
@@ -29,7 +29,7 @@ resources:
     edgeRewriteRole0:
       Type: AWS::IAM::Role
       Properties:
-        RoleName: edgeRewriteRole0
+        RoleName: edgeRewriteRole-${self:provider.stage}
         AssumeRolePolicyDocument:
           Version: '2012-10-17'
           Statement:
@@ -40,7 +40,7 @@ resources:
                   - edgelambda.amazonaws.com
               Action: sts:AssumeRole
         Policies:
-          - PolicyName: edgeRewriteRolePolicy0
+          - PolicyName: edgeRewriteRolePolicy-${self:provider.stage}
             PolicyDocument:
               Version: '2012-10-17'
               Statement:
