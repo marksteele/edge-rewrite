@@ -5,8 +5,7 @@
   "repository": "",
   "author": "Mark Steele <mark@control-alt-del.org>",
   "license": "MIT",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "aws-sdk": "^2.12.0",
     "aws-sdk-mock": "^1.6.1",
@@ -14,7 +13,7 @@
     "chai": "^4.0.2",
     "jsdoc": "^3.4.3",
     "jsdoc-to-markdown": "^3.0.0",
-    "mocha": "^3.2.0",
+    "mocha": "^5.2.0",
     "serverless-offline": "^3.13.3",
     "serverless-plugin-optimize": "^1.0.0-rc.15",
     "sinon": "^2.1.0"
