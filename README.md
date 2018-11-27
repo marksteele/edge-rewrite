@@ -74,6 +74,6 @@ Once the function is deployed, it can be associated to a CloudFront behaviour by
 This function has been tested to run on the `viewer request` phase of Lambda@Edge. It should also work on origin requests (which would have the benefit of caching responses).
 
 
-# Acknoledgements
+# Acknowledgements
 
 Based on https://github.com/tinganho/connect-modrewrite/blob/master/index.js
