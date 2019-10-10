@@ -16,6 +16,13 @@ functions:
     role: edgeRewriteRole0
     memorySize: 128
     timeout: 1
+  # testWeb: # Testing with serverless offline
+  #   handler: handler.test
+  #   events:
+  #     - http:
+  #         path: /
+  #         method: post
+  #         cors: true
 
 plugins:
   - serverless-plugin-optimize

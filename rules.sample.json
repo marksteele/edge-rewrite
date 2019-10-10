@@ -1,7 +1,7 @@
 [
+    "^/topsecret.*$ [F,L]",
     "^/oldpath/(\\d*)/(.*)$ /newpath/$2/$1 [L]",
     "!^/oldpath.*$ http://www.example.com [R=302,L,NC]",
-    "^/topsecret.*$ [F,L]",
     "^/deadlink.*$ [G]",
     "^/foo$ /bar [H=^baz.com$]"
 ]

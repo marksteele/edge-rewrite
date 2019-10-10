@@ -6,6 +6,8 @@
   "author": "Mark Steele <mark@control-alt-del.org>",
   "license": "MIT",
   "dependencies": {
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7"
   },
   "devDependencies": {
     "aws-sdk": "^2.12.0",
