@@ -6,3 +6,6 @@ jspm_packages
 .serverless
 # rules
 rules.json
+
+# IDEs
+/.idea

@@ -1,7 +1,14 @@
 service: edge-rewrite
+
+frameworkVersion: '2'
+
+variablesResolutionMode: '20210326'
+
 provider:
+  lambdaHashingVersion: '20201221'
   name: aws
-  runtime: nodejs10.x
+  region: us-east-1
+  runtime: nodejs12.x
   stage: ${opt:stage, self:custom.defaultStage}
   profile: ${self:custom.profiles.${self:provider.stage}}
 

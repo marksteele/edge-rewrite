@@ -7,7 +7,8 @@
   "license": "MIT",
   "dependencies": {
     "request": "^2.88.0",
-    "request-promise-native": "^1.0.7"
+    "request-promise-native": "^1.0.7",
+    "serverless": "^2.49.0"
   },
   "devDependencies": {
     "aws-sdk": "^2.12.0",
@@ -15,10 +16,10 @@
     "babel-preset-es2015": "^6.24.1",
     "chai": "^4.0.2",
     "jsdoc": "^3.4.3",
-    "jsdoc-to-markdown": "^3.0.0",
-    "mocha": "^3.2.0",
-    "serverless-offline": "^3.13.3",
-    "serverless-plugin-optimize": "^1.0.0-rc.15",
+    "jsdoc-to-markdown": "^7.0.1",
+    "mocha": "^9.0.3",
+    "serverless-offline": "^7.0.0",
+    "serverless-plugin-optimize": "^4.2.1-rc.1",
     "sinon": "^2.1.0"
   },
   "scripts": {
