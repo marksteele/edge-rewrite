@@ -1,7 +1,7 @@
 service: edge-rewrite
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs10.x
   stage: ${opt:stage, self:custom.defaultStage}
   profile: ${self:custom.profiles.${self:provider.stage}}
 
@@ -16,6 +16,13 @@ functions:
     role: edgeRewriteRole0
     memorySize: 128
     timeout: 1
+  # testWeb: # Testing with serverless offline
+  #   handler: handler.test
+  #   events:
+  #     - http:
+  #         path: /
+  #         method: post
+  #         cors: true
 
 plugins:
   - serverless-plugin-optimize

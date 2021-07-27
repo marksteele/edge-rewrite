@@ -50,9 +50,11 @@ Sample rules:
 
 # Operation
 
-Rules are packaged into a JSON file that should be placed at the root of this project in a file named `rules.json`.
+The code will look for a file called 'rules.json' in the root of this project. It should contain either a JSON array of rules (see rules.sample.json), or a quoted URL (on a single line, see rules.sample_url.json) that points to a JSON file that contains an array of rules.
 
-These will be bundled inside the lambda during the deployment process.
+The rules.json file will be packaged inside the lambda as part of the packaging process.
+
+When using a URL, rules are dynamically loaded at runtime from the specified URL in the rules.json file, and will be cached for 600 seconds. This allows you to update the rules without re-deploying the lambda.
 
 # Installation
 
@@ -74,6 +76,6 @@ Once the function is deployed, it can be associated to a CloudFront behaviour by
 This function has been tested to run on the `viewer request` phase of Lambda@Edge. It should also work on origin requests (which would have the benefit of caching responses).
 
 
-# Acknoledgements
+# Acknowledgements
 
 Based on https://github.com/tinganho/connect-modrewrite/blob/master/index.js
